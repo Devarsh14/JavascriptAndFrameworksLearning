@@ -7,8 +7,20 @@ function arriveAtCoffeeShop(customerName) {
 }
 
 
-function orderCoffee() {
-  console.log("I would like to have a Mocha");
+function orderCoffee(coffeeType) {
+    switch (coffeeType) {
+        case "Mocha":
+            console.log("I would like to have a Mocha");
+            break;
+        case "Latte":
+            console.log("I would like to have a Latte");
+            break;
+        case "Cappuccino":
+            console.log("I would like to have a Cappuccino");
+            break;
+        default:
+            console.log("I'm sorry, we don't have that type of coffee.");
+    }
 }
 
 function payForCoffee(amountPaid) {
@@ -23,5 +35,7 @@ function payForCoffee(amountPaid) {
 }
 
 arriveAtCoffeeShop("John");
-orderCoffee()
+orderCoffee("Mocha")
 console.log(payForCoffee(Math.random(2000)*1000));
+
+console.log(arriveAtCoffeeShop()) // undefined when there is no return statement in the function
