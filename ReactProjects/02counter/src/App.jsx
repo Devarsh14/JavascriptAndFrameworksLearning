@@ -9,6 +9,11 @@ const addValue = () => {
     setCounter(counter + 1);
   };
 
+  const removeValue = () => {
+    console.log("Value added", counter);
+    setCounter(counter - 1);
+  };
+
   return (
     <>
       <h1> React app</h1>
@@ -16,7 +21,7 @@ const addValue = () => {
 
       <button onClick={addValue}>Add Value {counter}</button>
       <br />
-      <button>Remove Value {counter}</button>
+      <button onClick={removeValue}>Remove Value {counter}</button>
       <p>footer: {counter}</p>
     </>
   );
