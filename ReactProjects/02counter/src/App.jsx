@@ -1,15 +1,21 @@
 import { useState } from "react";
 import "./App.css";
 
+// objective add value should not go more then 20
+// objective remove value should not go less then 0
 function App() {
   let [counter, setCounter] = useState(10);
 
   const addValue = () => {
-    setCounter(counter + 1);
+    if(counter<20){
+      setCounter(counter + 1);
+    }
   };
 
   const removeValue = () => {
-    setCounter(counter - 1);
+    if(counter>0 ){
+      setCounter(counter - 1);
+    }
   };
 
   return (
