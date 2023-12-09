@@ -2,15 +2,13 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  let [counter, setCounter] =  useState(10)
+  let [counter, setCounter] = useState(10);
 
-const addValue = () => {
-    console.log("Value added", counter);
+  const addValue = () => {
     setCounter(counter + 1);
   };
 
   const removeValue = () => {
-    console.log("Value added", counter);
     setCounter(counter - 1);
   };
 
