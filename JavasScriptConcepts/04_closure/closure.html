@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #313131">
+<button id="orange">Orange</button>
+<button id="green">Green</button>
+</body>
+
+  <script>
+    // lexical scoping  example
+    // function init() {
+    //   let name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    function outer() {
+      let userName = "John";
+      //   console.log(secret); // can not access secret here
+      // lexical scoping only allows parent function variable to child access
+      function inner() {
+        console.log(userName);
+        let secret = "1234";
+      }
+      inner();
+    }
+    outer();
+    // console.log(userName);
+
+    // closure example :
+    function makeFunc() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log(name);
+      }
+      return displayName; // returning reference of displayName function
+    }
+
+    // myFunc is a closure. makeFunc returns displayName function but it still has access to name variable
+    // reason for this is displayName function is returned from makeFunc function and it still has access to name variable dut to lexical scoping
+    const myFunc = makeFunc();
+    myFunc();
+  </script>
+
+  <script>
+    // document.getElementById("orange").addEventListener("click", function () {
+    //   document.body.style.backgroundColor = "orange";
+    // });
+    // document.getElementById("green").addEventListener("click", function () {
+    //   document.body.style.backgroundColor = "green";
+    // });
+
+    // this will directly execute the function and will not wait for click event
+    // reason for this is we are directly calling the function and not passing the reference of function
+
+
+    // this solves above problem using closure & lexial scoping
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`;
+        // the function has access to color due to lexical scoping access
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+    document.getElementById("orange").addEventListener("click", clickHandler("orange"))
+    document.getElementById("orange").addEventListener("click", clickHandler("green"))
+
+
+</script>
+</html>
