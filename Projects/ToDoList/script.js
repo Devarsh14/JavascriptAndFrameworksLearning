@@ -12,10 +12,9 @@ document.querySelector("#push").addEventListener("click", function () {
         </button>
         </div>`;
 
-        document.querySelector("#task").value= "";
+    document.querySelector("#task").value = "";
   }
 });
-
 
 // delete tasks
 document.addEventListener("click", function (e) {
@@ -30,4 +29,3 @@ document.addEventListener("click", function (e) {
     e.target.classList.toggle("completed");
   }
 });
-
