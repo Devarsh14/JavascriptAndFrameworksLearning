@@ -63,3 +63,58 @@ body {
   color: #ffffff;
   cursor: pointer;
 }
+
+#tasks{
+background-color: #ffffff;
+ padding: 30px 20px;
+ margin-top: 60px;
+border-radius: 10px;
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+width: 100%;
+position: relative;
+}
+
+.magenta-gradient {
+  background: linear-gradient(135deg, #ff00ff, #ff99ff);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  width: 70%;
+  min-height: 20vh;
+
+}
+
+.task{
+  background-color: #ffffff;
+  padding: 5px 10px;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-self: space-between;
+  border-bottom: 2px solid #d1d3d4;
+  cursor: pointer;
+}
+
+.task span{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.task button{
+  background-color: #8052ec;
+  color: #ffffff;
+  height: 100%;
+  width: 100px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.completed{
+  text-decoration: line-through;
+  color: #d1d3d4;
+}
